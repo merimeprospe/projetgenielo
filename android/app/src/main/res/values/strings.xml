@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Employme</string>
+    <string name="title_activity_main">Employme</string>
+    <string name="package_name">org.licence3.projet_sn</string>
+    <string name="custom_url_scheme">org.licence3.projet_sn</string>
+</resources>
