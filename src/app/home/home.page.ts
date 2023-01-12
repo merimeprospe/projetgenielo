@@ -12,10 +12,10 @@ import { RegisterPage } from '../view/register/register.page';
 export class HomePage {
   Users:any
   constructor(private ds:DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
-    ds.getuser().subscribe( res => {
-      console.log(res);
-      this.Users = res;
-    })
+  //   ds.getuser().subscribe( res => {
+  //     console.log(res);
+  //     this.Users = res;
+  // })
   }
 
   healt_icon: string = "outline";
@@ -74,12 +74,12 @@ export class HomePage {
           text: 'Add',
           handler: (res) => {
 
-            this.ds.addUser({
-              username: res.username,
-              email: res.email,
-              password: res.password,
-              role: "client_simple"
-            })
+            // this.ds.addUser({
+            //   username: res.username,
+            //   email: res.email,
+            //   password: res.password,
+            //   role: "client_simple"
+            // })
           }
         }
       ]

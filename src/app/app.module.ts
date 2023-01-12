@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { environment } from 'src/environments/environment';
-import {provideFirebaseApp, initializeApp} from '@angular/fire/app'
-import { getFirestore, provideFirestore } from '@angular/fire/firestore'
+// import {provideFirebaseApp, initializeApp} from '@angular/fire/app'
+// import { getFirestore, provideFirestore } from '@angular/fire/firestore'
   
 
 import { from } from 'rxjs';
@@ -22,8 +22,8 @@ import { from } from 'rxjs';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()) 
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore()) 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
