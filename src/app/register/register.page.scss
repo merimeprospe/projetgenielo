@@ -3,6 +3,10 @@ ion-content{
     --overflow:hidden; 
 }
 
+ion-toolbar{
+    --background: rgb(214, 62, 57);
+}
+
 .contener{
     background: white;
     height: 100%;
@@ -20,7 +24,6 @@ ion-content{
     background:rgb(248, 238, 238);
     height: 60px;
     margin-top: 20px;
-    margin-bottom: 30px;
     display: flex;
 }
 
@@ -35,8 +38,9 @@ ion-button{
     border-radius: 100px;
     height: 70px;
     width: 170px;
-    margin-left: 25%;
-    margin-top: 30px;   
+    margin-left: 25%; 
+    --background:rgb(214, 62, 57);
+    margin-top: 20px;  
     p{
         font-size: medium;
         font-family: 'Times New Roman', Times, serif;
@@ -81,10 +85,12 @@ ion-label{
     color:rgb(214, 62, 57);
 }
 
-ion-button{
-    --background:rgb(214, 62, 57);
-}
+
 
 ion-input{
     height: auto;
+}
+
+ion-back-button{
+    color:white;
 }
