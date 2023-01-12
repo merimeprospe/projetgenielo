@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
+import { type } from 'os';
+import { DataService } from '../provade/data.service';
+import { RegisterPage } from '../view/register/register.page';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,63 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  Users:any
+  constructor(private ds:DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
+    ds.getuser().subscribe( res => {
+      console.log(res);
+      this.Users = res;
+    })
+  }
 
-  constructor() {}
+  async openUsere(user: any){
+    const modal = await this.modalCtrl.create({
+      component: RegisterPage,
+      componentProps: { id: user.id},
+      breakpoints: [0, 0.5, 0.8],
+      initialBreakpoint: 0.5
+    });
+    await modal.present();
+  }
+  async addUser(){
+    const alert = await this.alertCtrl.create({
+      header: 'Add Note',
+      inputs: [
+        {
+          name: 'username',
+          placeholder: 'username',
+          type: 'text'
+        },
+        {
+          name: 'email',
+          placeholder: 'email',
+          type: 'text'
+        },
+        {
+          name: 'password',
+          placeholder: 'password',
+          type: 'text'
+        }
+      ],
+      buttons:[
+        {
+          text: 'Cancel',
+          role: 'Cancel'
+        },
+        {
+          text: 'Add',
+          handler: (res) => {
+
+            this.ds.addUser({
+              username: res.username,
+              email: res.email,
+              password: res.password,
+              role: "client_simple"
+            })
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
 
 }
