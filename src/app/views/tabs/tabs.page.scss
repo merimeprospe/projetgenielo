@@ -1,0 +1,18 @@
+ion-tab-bar{
+    height: 65px;
+    ion-tab-button {
+        --ion-ripple:var(--ion-color-color-red)
+        // --color:var(--ion-color-color-red);
+        // --color:;
+    }
+
+    .newpost{
+        --background: var(--ion-color-color-red);
+        border-radius: 50%;
+        color: white;
+    }
+    ion-avatar{
+        height: auto;
+        width: auto;
+    }
+}

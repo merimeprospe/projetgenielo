@@ -1,20 +1,304 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar class="ion-no-border">
+        <ion-title class="">
+            Linkedin
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button [routerLink]="['/chat']" routerLinkActive="router-link-active" >
+                <ion-icon name="search"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <ion-icon name="chatbubble-ellipses"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-no-border">
+    <div class="container1">
+        <div class="container">
+            <div class=" status-users container-scroll">
+                <div class="box-title d-f-s-b">
+                    <p>What's new</p>
+                    <p>View all</p>
+                </div>
+                <div class="scroll-box">
+                    <div class="status">
+                        <img [src]="['assets/img/Tenor.jpg']" />
+                         <div class="bg-status"><p> Tenor</p></div>
+                    </div>
+                    <div class="status">
+                        <img [src]="['assets/img/blackM.jpg']" />
+                         <div class="bg-status"><p> Black M</p></div>
+                    </div>
+                    <div class="status">
+                        <img [src]="['assets/img/naza.jpg']" />
+                        <div class="bg-status"><p> kevin kamla</p></div>
+                    </div>
+                    <div class="status">
+                        <img [src]="['assets/img/gims.jpg']" />
+                         <div class="bg-status"><p>Maitre Gims</p></div>
+                    </div>
+                    <div class="status">
+                        <img [src]="['assets/img/sort.jpg']" />
+                         <div class="bg-status"><p> Maahlox</p></div>
+                    </div>
+                    <div class="status">
+                        <img [src]="['assets/img/maa.jpg']" />
+                         <div class="bg-status"><p> kevin kamla</p></div>
+                    </div>
+                    <!-- <div class="status">
+                        <ion-img [src]="['assets/img/Tenor.jpg']"></ion-img>
+                    </div>
+                    <div class="status">
+                        <ion-img [src]="['assets/img/blackM.jpg']"></ion-img>
+                    </div>
+                    <div class="status">
+                        <ion-img [src]="['assets/img/naza.jpg']"></ion-img>
+                    </div>
+                    <div class="status">
+                        <ion-img [src]="['assets/img/gims.jpg']"></ion-img>
+                    </div>
+                    <div class="status">
+                        <ion-img [src]="['assets/img/sort.jpg']"></ion-img>
+                    </div>
+                    <div class="status">
+                        <ion-img [src]="['assets/img/maa.jpg']"></ion-img>
+                    </div> -->
+                </div>
+            </div>
+            <div class="bloc-publication">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item>
+                            <ion-avatar>
+                                <img [src]="['assets/img/naza.jpg']" />
+                            </ion-avatar>
+                            <ion-label>
+                                <h3>Maahlox SARL</h3>
+                                <p>Artist hit</p>
+                            </ion-label>
+                        </ion-item>
+                        <ion-buttons>
+                            <ion-button>
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p>you can add configuration options for Jasmine here the possible options
+                            are listed at asminel for example, you can disable the random 
+                            execution with `random: false execution with `random: false</p>
+                        <div class="bloc-like-comment d-f-s-b">
+                            <span>20k Likes</span>
+                            <span>357k Comments</span>
+                        </div>
+                    </ion-card-content>
+                    <div class="bloc-buttons">
+                        <ion-buttons slot="start" class="d-f-s-b">
+                            <ion-button (click)="whislist()">
+                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
+                            </ion-button>
+                            <ion-button (click)="Comment()">
+                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
+                            </ion-button>
+                            <ion-button>
+                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                    <div class="bloc-comment" *ngIf="isCommentActive">
+                        <div class="comment-chat">
+
+                        </div>
+                        <form>
+                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <div class="d-f-e send">
+                                <ion-button shape="round" type="submit">
+                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </form>
+                    </div>
+                </ion-card>
+            </div>
+            <div class="bloc-publication">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item>
+                            <ion-avatar>
+                                <img [src]="['assets/img/maa.jpg']" />
+                            </ion-avatar>
+                            <ion-label>
+                                <h5>Maahlox SARL</h5>
+                                <p>5 days ago</p>
+                            </ion-label>
+                        </ion-item>
+                        <ion-buttons>
+                            <ion-button>
+                                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p>you can add configuration options for Jasmine here the possible options
+                            are listed at jasmine. github.i o/api/edge/ Configurati.</p>
+                        <ion-img [src]="['assets/img/sort.jpg']"></ion-img>
+                        <div class="bloc-like-comment d-f-s-b">
+                            <span>1k Likes</span>
+                            <span>365 Comments</span>
+                        </div>
+                    </ion-card-content>
+                    <div class="bloc-buttons">
+                        <ion-buttons slot="start" class="d-f-s-b">
+                            <ion-button (click)="whislist()">
+                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
+                            </ion-button>
+                            <ion-button (click)="Comment()">
+                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
+                            </ion-button>
+                            <ion-button>
+                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                    <div class="bloc-comment" *ngIf="isCommentActive">
+                        <div class="comment-chat">
+                            <div class="bloc-contain">
+                                <div class="message-from">
+                                    <ion-avatar>
+                                        <img [src]="['assets/img/maa.jpg']" />
+                                    </ion-avatar>
+                                    <div class="sms-container from">
+                                        <span>
+                                            <p> Hello as to live to brinth as to live</p>
+                                        </span>
+                                        <span class="d-f-e">12:09</span>
+                                    </div>
+                                </div>
+                                <div class="message-from">
+                                    <ion-avatar>
+                                        <img [src]="['assets/img/Tenor.jpg']" />
+                                    </ion-avatar>
+                                    <div class="sms-container from">
+                                        <span>
+                                            <p> Fine thanks and you? </p>
+                                        </span>
+                                        <span class="d-f-e">12:09</span>
+                                    </div>
+                                </div>
+                                <div class="message-from">
+                                    <ion-avatar>
+                                        <img [src]="['assets/img/gims.jpg']" />
+                                    </ion-avatar>
+                                    <div class="sms-container from">
+                                        <span>
+                                            <p>No no but i like beer </p>
+                                        </span>
+                                        <span class="d-f-e">12:09</span>
+                                    </div>
+                                </div>
+                                <div class="message-from">
+                                    <ion-avatar>
+                                        <img [src]="['assets/img/naza.jpg']" />
+                                    </ion-avatar>
+                                    <div class="sms-container from">
+                                        <span>
+                                            <p>Fine Dou yo smooked ?</p>
+                                        </span>
+                                        <span class="d-f-e">13:00</span>
+                                    </div>
+                                </div>
+                                <div class="message-from">
+                                    <ion-avatar>
+                                        <img [src]="['assets/img/blackM.jpg']" />
+                                    </ion-avatar>
+                                    <div class="sms-container from">
+                                        <span>
+                                            <p>Fine Dou yo smooked ?</p>
+                                        </span>
+                                        <span class="d-f-e">13:00</span>
+                                    </div>
+                                </div>
+                                <div class="message-to">
+                                    <div class="sms-container to">
+                                        <span>
+                                            <p>Fine Dou yo smooked ?</p>
+                                        </span>
+                                        <span class="d-f-e">13:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <div class="d-f-e send">
+                                <ion-button shape="round" type="submit">
+                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </form>
+                    </div>
+                </ion-card>
+            </div>
+
+            <div class="bloc-publication">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item>
+                            <ion-avatar>
+                                <img [src]="['assets/img/gims2.jpg']" />
+                            </ion-avatar>
+                            <ion-label>
+                                <h3>Maahlox SARL</h3>
+                                <p>5 hours ago</p>
+                            </ion-label>
+                        </ion-item>
+                        <ion-buttons>
+                            <ion-button>
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p>you can add configuration options for Jasmine here the possible options
+                            are listed at https://jasmine.github.io/api/edge/Configuration.html for example,
+                            you can disable the random execution with `random: false</p>
+                        <ion-img [src]="['assets/img/gims.jpg']"></ion-img>
+                        <div class="bloc-like-comment d-f-s-b">
+                            <span>541 Likes</span>
+                            <span>15k Comments</span>
+                        </div>
+                    </ion-card-content>
+                    <div class="bloc-buttons">
+                        <ion-buttons slot="start" class="d-f-s-b">
+                            <ion-button (click)="whislist()">
+                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
+                            </ion-button>
+                            <ion-button (click)="Comment()">
+                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
+                            </ion-button>
+                            <ion-button>
+                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                    <div class="bloc-comment" *ngIf="isCommentActive">
+                        <div class="comment-chat">
+
+                        </div>
+                        <form>
+                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <div class="d-f-e send">
+                                <ion-button shape="round" type="submit">
+                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </form>
+                    </div>
+                </ion-card>
+            </div>
+        </div>
+    </div>
 </ion-content>
