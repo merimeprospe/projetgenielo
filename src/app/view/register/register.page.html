@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <div *ngIf="user">
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <!-- <ion-input [(ngModel)]="user.username")></ion-input> -->
+      <ion-input [ngModel]="user.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">email</ion-label>
+      <ion-input [ngModel]="user.email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input ></ion-input>
+    </ion-item>
+
+    <ion-button (click)="updateUser()" expand="block" color="success">
+      <ion-icon slot="save"  slot="start">
+        Update
+      </ion-icon>
+    </ion-button>
+    <ion-button (click)="deleteUser()" expand="block" color="danger">
+      <ion-icon slot="trash" slot="start">
+        Delete
+      </ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
