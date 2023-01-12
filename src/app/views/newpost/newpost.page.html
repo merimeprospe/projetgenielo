@@ -24,7 +24,7 @@
             <ion-avatar>
               <img [src]="['assets/img/naza.jpg']" />
             </ion-avatar>
-            <ion-textarea placeholder="Enter your post"></ion-textarea>
+            <ion-textarea placeholder="Enter your post" ></ion-textarea>
           </ion-card-content>
           <div class="">
             <ion-buttons slot="start">
@@ -41,7 +41,7 @@
           </div>
         </ion-card>
         <div class="d-f-e send">
-          <ion-button shape="round" type="submit">
+          <ion-button shape="round" type="submit" (click)="addPost()">
               <ion-icon slot="icon-only" name="send-outline"></ion-icon>
           </ion-button>
       </div>

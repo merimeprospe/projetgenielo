@@ -17,7 +17,7 @@ export class HomePage {
       this.Users = res;
     })
   }
-
+  
   healt_icon: string = "outline";
   isCommentActive: boolean = false
   
@@ -79,6 +79,7 @@ export class HomePage {
               email: res.email,
               password: res.password,
               role: "client_simple"
+
             })
           }
         }

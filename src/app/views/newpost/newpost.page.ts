@@ -25,4 +25,8 @@ export class NewpostPage implements OnInit {
   ngOnInit() {
   }
 
+  addPost(){
+    
+  }
+
 }
