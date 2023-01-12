@@ -1,0 +1,15 @@
+ion-content{
+    --background: rgb(57, 178, 214);
+}
+
+.contener{
+    background: white;
+    height: 100%;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    z-index: 2;
+    margin-top: 150px;
+    .texte{
+        margin-top: 20px;
+    }
+}
