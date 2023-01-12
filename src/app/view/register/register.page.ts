@@ -17,17 +17,17 @@ export class RegisterPage implements OnInit {
   async ngOnInit() {
     
     
-    //  await this.ds.getUserById(this.id).subscribe(
-    //   res => {
-    //     this.user = res
-    //   }
-    //   )
+     await this.ds.getUserById(this.id).subscribe(
+      res => {
+        this.user = res
+      }
+      )
   }
 
   async updateUser(){
     console.log(this.user);
     
-    // this.ds.updateUser(this.user);
+    this.ds.updateUser(this.user);
     const toast = await this.toastCtrl.create({
       message: 'User modifier',
       duration: 1000
@@ -36,7 +36,7 @@ export class RegisterPage implements OnInit {
   }
 
   async deleteUser(){
-    // await this.ds.deleteUser(this.user)
+    await this.ds.deleteUser(this.user)
     this.modalCtrl.dismiss
   }
 
