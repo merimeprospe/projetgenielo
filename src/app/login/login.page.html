@@ -10,14 +10,14 @@
   <div class="formulaire">
     <div class="item">
         <ion-icon name="mail" size="medium"></ion-icon>
-        <ion-input type="email" placeholder="Email"></ion-input>
+        <ion-input  [(ngModel)]="user.email" type="email" placeholder="Email"></ion-input>
     </div>
     <div class="item">
         <ion-icon name="lock-closed" size="medium"></ion-icon>
-        <ion-input type="password" placeholder="Mot de passe"></ion-input>
+        <ion-input  [(ngModel)]="user.password" type="password" placeholder="Mot de passe"></ion-input>
     </div>
   </div>
-  <ion-button shape="round"><p>Se Connecter</p></ion-button>
+  <ion-button shape="round" (click)="connection()"><p>Se Connecter</p></ion-button>
   <div class="options">
     <p>Pas de compte? <ion-label [routerLink]="['register']">Inscrivez-vous!</ion-label></p>
     <ion-label [routerLink]="['reset-password']">Mot de passe oublié?</ion-label>

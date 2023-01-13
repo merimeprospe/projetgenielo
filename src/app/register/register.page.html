@@ -5,30 +5,34 @@
 </ion-header>
 
 <ion-content>
-
+  
   <div class="contener">
     <div class="texte">
       <p class="title"><i>Employ Me </i><span><br>Inscription</span></p>
       <h4>Inscrivez-vous et découvrez les dernières offres d'emploi</h4>
+      <div *ngIf="error" class="error"> 
+        <span>{{ error }}</span> 
+        <ion-icon slot="end" name="close" (click)="close()"></ion-icon>
+      </div>
     </div>
-   
+    
   <div class="formulaire">
       <div class="item">
         <ion-icon name="person" size="medium"></ion-icon>
-        <ion-input type="text" placeholder="Nom d'utlisateur"></ion-input>
+        <ion-input [(ngModel)]="user.username" type="text" placeholder="Nom d'utlisateur"></ion-input>
     </div>
     
     
     <div class="item">
         <ion-icon name="mail" size="medium"></ion-icon>
-        <ion-input type="email" placeholder="Email"></ion-input>
+        <ion-input [(ngModel)]="user.email" type="email" placeholder="Email"></ion-input>
     </div>
     <div class="item">
         <ion-icon name="lock-closed" size="medium"></ion-icon>
-        <ion-input type="password" placeholder="Mot de passe"></ion-input>
+        <ion-input required minimunlengh="8" [(ngModel)]="user.password" type="password" placeholder="Mot de passe"></ion-input>
     </div>
   </div>
-  <ion-button shape="round"><p>S'inscrire</p></ion-button>
+  <ion-button shape="round" (click)="register()"><p>S'inscrire</p></ion-button>
   <div class="options">
     <p>Déja un compte? <ion-label [routerLink]="['login']">Connectez-vous!</ion-label></p>
    
