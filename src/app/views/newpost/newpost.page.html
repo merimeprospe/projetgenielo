@@ -26,22 +26,28 @@
                 <img [src]="['assets/img/naza.jpg']" />
               </ion-avatar>
               <ion-label position="fixed">Title</ion-label>
-              <ion-input type="text" placeholder="Enter title"></ion-input>
+              <ion-input type="text" (ionInput)="newpost2($event)" placeholder="Enter title"></ion-input>
               <ion-label position="fixed">Post</ion-label>
-              <ion-textarea type="text" name="postContent" placeholder="Enter your post"></ion-textarea>
-              <label class="label-img d-f-c" for="image" position="stacked">
-                <ion-icon slot="start" name="images"></ion-icon>|<ion-icon slot="start" name="videocam"></ion-icon>
-                Upload attachment</label>
+              <ion-textarea (ionInput)="newpost($event)" type="text" name="postContent" placeholder="Enter your post"></ion-textarea>
+              <label (click)="getImage()" class="label-img d-f-c" position="stacked">
+                <div *ngIf="!file">
+                  <ion-icon slot="start" name="images"></ion-icon>|<ion-icon slot="start" name="videocam"></ion-icon>
+                  Upload attachment
+                </div>
+                <div *ngIf="file">
+                  <ion-img src={{file}}></ion-img>
+                </div>
+              </label>
               <input class="d-n" type="file" name="image" id="image" />
               <input class="d-n" type="file" name="video" id="video" />
             </ion-card-content>
             <div class="">
-              <ion-buttons slot="start">
-                <ion-button id="sendImg">
-                  <ion-icon class="sendIconImg" slot="start" name="image"></ion-icon> <label for="image">Photo</label>
+              <ion-buttons  slot="start">
+                <ion-button (click)="getImage()">
+                  <ion-icon class="sendIconImg" slot="start" name="image"></ion-icon> <label >Photo</label>
                 </ion-button>
-                <ion-button id="sendVid">
-                  <ion-icon class="sendIconVid" slot="start" name="videocam"></ion-icon><label for="video">Video</label>
+                <ion-button  id="sendVid">
+                  <ion-icon class="sendIconVid" slot="start" name="videocam"></ion-icon><label>Video</label>
                 </ion-button>
                 <ion-button id="sendWork">
                   <ion-icon class="sendIconWork" slot="start" name="bag-remove"></ion-icon>Work
@@ -51,7 +57,7 @@
           </form>
         </ion-card>
         <div class="d-f-e send">
-          <ion-button shape="round" type="submit">
+          <ion-button shape="round" type="submit" (click)="addPost()" [routerLink]="['/home']">
             <ion-icon slot="icon-only" name="send-outline"></ion-icon>
           </ion-button>
         </div>

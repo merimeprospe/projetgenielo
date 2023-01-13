@@ -84,11 +84,11 @@
           <ion-button shape="round" fill="clear">
             <ion-icon name="attach"></ion-icon>
           </ion-button>
-          <ion-button shape="round" type="submit" fill="clear">
+          <ion-button shape="round" type="submit" fill="clear" (click)="send()">
             <ion-icon slot="icon-only" name="send-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-textarea type="text" name="comment"></ion-textarea>
+        <ion-textarea [(ngModel)]="sms.ms" type="text" name="comment"></ion-textarea>
       </form>
     </div>
   </div>

@@ -63,6 +63,65 @@
                     </div>
                 </div>
             </div>
+            <div class="bloc-publication" *ngFor="let item of Users">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item>
+                            <ion-avatar>
+                                <img [src]="['assets/img/naza.jpg']" />
+                            </ion-avatar>
+                            <ion-label>
+                                <h3>{{Info.user.username}}</h3>
+                                <p>Artist hit</p>
+                            </ion-label>
+                        </ion-item>
+                        <ion-buttons>
+                            <ion-button>
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{item.titre}}
+                        <br>
+                        <p>{{item.Contenu}}</p>
+                        <div *ngIf="item.file">
+                            {{item.fine}}
+                            <ion-img src={{item.file}}></ion-img>
+                        </div>
+                        <div class="bloc-like-comment d-f-s-b">
+                            <span>20k Likes</span>
+                            <span>357k Comments</span>
+                        </div>
+                    </ion-card-content>
+                    <div class="bloc-buttons">
+                        <ion-buttons slot="start" class="d-f-s-b">
+                            <ion-button (click)="whislist()">
+                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
+                            </ion-button>
+                            <ion-button (click)="Comment()">
+                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
+                            </ion-button>
+                            <ion-button>
+                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                    <div class="bloc-comment" *ngIf="isCommentActive">
+                        <div class="comment-chat">
+
+                        </div>
+                        <form>
+                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <div class="d-f-e send">
+                                <ion-button shape="round" type="submit">
+                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </form>
+                    </div>
+                </ion-card>
+            </div>
             <div class="bloc-publication">
                 <ion-card>
                     <ion-card-header>
@@ -118,6 +177,7 @@
                     </div>
                 </ion-card>
             </div>
+            
             <div class="bloc-publication">
                 <ion-card>
                     <ion-card-header>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { type } from 'os';
 import { DataService } from '../provade/data.service';
@@ -10,15 +10,18 @@ import { ViewstatusPage } from '../views/viewstatus/viewstatus.page';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
   Users: any
+  Info: any
   constructor(private ds: DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
-    ds.getuser().subscribe(res => {
+    ds.getPublication().subscribe(res => {
       console.log(res);
       this.Users = res;
     })
   }
-  
+  ngOnInit() {
+    this.Info = JSON.parse(localStorage.getItem("globalInfo") as string)
+  }
   healt_icon: string = "outline";
   isCommentActive: boolean = false
 

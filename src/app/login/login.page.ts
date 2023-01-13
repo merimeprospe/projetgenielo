@@ -3,7 +3,13 @@ import { Router } from '@angular/router';
 import { DataService } from '../provade/data.service';
 
 export let globalInfo = {
-  user: null
+  user:{
+    id: "",
+  email: "",
+  password: "",
+  username: "",
+  role: "",
+  }
 }
 
 @Component({
@@ -38,6 +44,7 @@ export class LoginPage implements OnInit {
           {
             globalInfo.user = el 
             this.route.navigateByUrl('/home');
+            localStorage.setItem("globalInfo", JSON.stringify(globalInfo))
           }
           else{
             this.error="mot de passe incorret"

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collectionData, docData, collection, doc, deleteDoc, updateDoc } from '@angular/fire/firestore';
 import { EmailValidator } from '@angular/forms';
+import { Data } from '@angular/router';
 import { addDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 
@@ -11,6 +12,12 @@ export interface User{
   password: string;
   username: string;
   role: string;
+}
+export interface Message{
+  id?: string;
+  user: string;
+  date: string
+  message: string
 }
 export interface Profil{
   id?: string;
@@ -32,6 +39,7 @@ export interface Publication{
   titre: string;
   Contenu: string;
   file: string;
+  date: Date
 }
 
 export interface Image{
@@ -53,6 +61,61 @@ export interface Statut{
 export class DataService {
 
   constructor(private firestore: Firestore) { }
+
+/*-------------------------------Message------------------------------------------*/
+
+getmessage(): Observable<Message[]>{
+  const userRef = collection(this.firestore, 'Message')
+  return collectionData(userRef, {idField: 'id'}) as Observable<Message[]>;
+}
+
+getMessageById(id: any): Observable<Message> {
+  const userDocRef = doc(this.firestore, `Message/${id}`);
+  return docData(userDocRef, {idField: 'id'}) as Observable<Message>;
+}
+
+addMessage(Message: Message) {
+  const userRef = collection(this.firestore, 'Message');
+  return addDoc(userRef, Message);
+}
+
+deleteMessage(Message: Message) {
+  const userDocRef = doc(this.firestore, `Message/${Message.id}`);
+  return deleteDoc(userDocRef);
+}
+
+updateMessage(Message: Message) {
+  const userDocRef = doc(this.firestore, `Message/${Message.id}`);
+  return updateDoc(userDocRef, { Message: Message.message, user: Message.user});
+}
+
+
+/*-------------------------------image------------------------------------------*/
+
+  getimage(): Observable<Image[]>{
+    const userRef = collection(this.firestore, 'Image')
+    return collectionData(userRef, {idField: 'id'}) as Observable<Image[]>;
+  }
+
+  getImageById(id: any): Observable<Image> {
+    const userDocRef = doc(this.firestore, `Image/${id}`);
+    return docData(userDocRef, {idField: 'id'}) as Observable<Image>;
+  }
+  
+  addImage(Image: Image) {
+    const userRef = collection(this.firestore, 'Image');
+    return addDoc(userRef, Image);
+  }
+
+  deleteImage(Image: Image) {
+    const userDocRef = doc(this.firestore, `Image/${Image.id}`);
+    return deleteDoc(userDocRef);
+  }
+
+  updateImage(Image: Image) {
+    const userDocRef = doc(this.firestore, `Image/${Image.id}`);
+    return updateDoc(userDocRef, { file: Image.file, user: Image.user});
+  }
 
 /*-----------------------------User------------------------------------------*/
 
