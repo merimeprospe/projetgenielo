@@ -9,6 +9,10 @@ export class JobofferPage implements OnInit {
 
   constructor() { }
 
+  openChat(){
+    
+  }
+  
   ngOnInit() {
   }
 

@@ -35,7 +35,19 @@ const routes: Routes = [
       },
       {
         path: 'chat',
-        loadChildren: () => import('../../views/chat/chat.module').then( m => m.ChatPageModule)
+        loadChildren: () => import('../../views/chat/chat.module').then(m => m.ChatPageModule)
+      },
+      {
+        path: 'newpost',
+        loadChildren: () => import('../../views/newpost/newpost.module').then(m => m.NewpostPageModule)
+      },
+      {
+        path: 'listchat',
+        loadChildren: () => import('../../views/listchat/listchat.module').then(m => m.ListchatPageModule)
+      },
+      {
+        path: 'viewstatus',
+        loadChildren: () => import('../../views/viewstatus/viewstatus.module').then( m => m.ViewstatusPageModule)
       },
     ]
   }

@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-  }
+  },
+  {
+    path: 'newpost',
+    loadChildren: () => import('./../views/newpost/newpost.module').then(m => m.NewpostPageModule)
+  },
 ];
 
 @NgModule({

@@ -20,31 +20,41 @@
     <div class="container1">
       <div class="container">
         <ion-card>
-          <ion-card-content>
-            <ion-avatar>
-              <img [src]="['assets/img/naza.jpg']" />
-            </ion-avatar>
-            <ion-textarea placeholder="Enter your post"></ion-textarea>
-          </ion-card-content>
-          <div class="">
-            <ion-buttons slot="start">
-              <ion-button id="sendImg">
-                <ion-icon class="sendIconImg" slot="start" name="image"></ion-icon>Photo
-              </ion-button>
-              <ion-button id="sendVid">
-                <ion-icon class="sendIconVid" slot="start" name="videocam"></ion-icon>Video
-              </ion-button>
-              <ion-button id="sendWork">
-                <ion-icon class="sendIconWork" slot="start" name="bag-remove"></ion-icon>Work
-              </ion-button>
-            </ion-buttons>
-          </div>
+          <form action="">
+            <ion-card-content>
+              <ion-avatar>
+                <img [src]="['assets/img/naza.jpg']" />
+              </ion-avatar>
+              <ion-label position="fixed">Title</ion-label>
+              <ion-input type="text" placeholder="Enter title"></ion-input>
+              <ion-label position="fixed">Post</ion-label>
+              <ion-textarea type="text" name="postContent" placeholder="Enter your post"></ion-textarea>
+              <label class="label-img d-f-c" for="image" position="stacked">
+                <ion-icon slot="start" name="images"></ion-icon>|<ion-icon slot="start" name="videocam"></ion-icon>
+                Upload attachment</label>
+              <input class="d-n" type="file" name="image" id="image" />
+              <input class="d-n" type="file" name="video" id="video" />
+            </ion-card-content>
+            <div class="">
+              <ion-buttons slot="start">
+                <ion-button id="sendImg">
+                  <ion-icon class="sendIconImg" slot="start" name="image"></ion-icon> <label for="image">Photo</label>
+                </ion-button>
+                <ion-button id="sendVid">
+                  <ion-icon class="sendIconVid" slot="start" name="videocam"></ion-icon><label for="video">Video</label>
+                </ion-button>
+                <ion-button id="sendWork">
+                  <ion-icon class="sendIconWork" slot="start" name="bag-remove"></ion-icon>Work
+                </ion-button>
+              </ion-buttons>
+            </div>
+          </form>
         </ion-card>
         <div class="d-f-e send">
           <ion-button shape="round" type="submit">
-              <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+            <ion-icon slot="icon-only" name="send-outline"></ion-icon>
           </ion-button>
-      </div>
+        </div>
       </div>
     </div>
 
@@ -52,84 +62,48 @@
 
 
 
-    <ion-modal trigger="sendImg">
+    <ion-modal trigger="sendWork">
       <ng-template>
-        <ion-header>
-          <ion-title>New post</ion-title>
-            <ion-button (click)="closeModal()" fill="clear">
-              <ion-icon name="close"></ion-icon>
-            </ion-button>
-        </ion-header>
-
-        <ion-content>
-          <form action="">
-            <ion-item>
-              <!-- <ion-label position="stacked">Id</ion-label> -->
-              <ion-textarea type="text" name="postContent"  placeholder="Enter your post"></ion-textarea>
-            </ion-item>
-            <ion-item>
-              <ion-label name="image" position="stacked">Upload attachment</ion-label>
-              <ion-input class="" type="file" name="image"></ion-input>
-            </ion-item>
-            <ion-button expand="block">
-              Ajouter
-            </ion-button>
-          </form>
-        </ion-content>
-      </ng-template>
-    </ion-modal>
-
-    <ion-modal trigger="sendVid">
-      <ng-template>
-        <ion-title>New video post</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="closeModal1()">
+        <header>
+          <ion-title>New work</ion-title>
+          <ion-button (click)="closeModal()" fill="clear">
             <ion-icon name="close"></ion-icon>
           </ion-button>
-        </ion-buttons>
+        </header>
+
         <ion-content>
           <form action="">
-            <ion-item>
-              <ion-label position="stacked">Id</ion-label>
-              <ion-input type="number" disabled="true" name="id"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Nom du son</ion-label>
-              <ion-input type="text" placeholder="Entrer le nom du son" name="nom"></ion-input>
-            </ion-item>
-            <ion-button expand="block">
-              Ajouter
-            </ion-button>
+            <ion-label position="fixed">Title</ion-label>
+            <ion-input type="text" placeholder="Enter title"></ion-input>
+            <ion-label position="fixed">Description</ion-label>
+            <ion-textarea type="text" name="postContent" placeholder="Ex: topics, schedule, etc"></ion-textarea>
+            <ion-label position="fixed">Date start</ion-label>
+            <ion-input type="date" placeholder="Enter title"></ion-input>
+            <ion-label position="fixed">Hours start</ion-label>
+            <ion-input type="text" placeholder="Enter title"></ion-input>
+            <ion-label position="fixed">Hours end</ion-label>
+            <ion-input type="text" placeholder="Enter title"></ion-input>
+            <ion-label position="fixed">Duration</ion-label>
+            <ion-select value="Indeterminé" multiple="true" placeholder="Select Duration">
+              <ion-select-option value="peperoni">Determiné</ion-select-option>
+              <ion-select-option value="hawaii">Indeterminé</ion-select-option>
+            </ion-select>
+            <ion-label position="fixed">Location</ion-label>
+            <ion-input type="text" placeholder="Yaoundé, Bastos"></ion-input>
+            <label class="label-img d-f-c" for="image" position="stacked">
+              <ion-icon name="document"></ion-icon> Upload file</label>
+            <input class="d-n" type="file" name="image" id="image" />
+            <div class="d-f-e send">
+              <ion-button shape="round" type="submit">
+                <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+              </ion-button>
+            </div>
           </form>
         </ion-content>
       </ng-template>
     </ion-modal>
 
-    <ion-modal trigger="sendWork" >
-      <ng-template>
-        <ion-title>New job</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="closeModal2()">
-            <ion-icon name="close"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-content>
-          <form action="">
-            <ion-item>
-              <ion-label position="stacked">Id</ion-label>
-              <ion-input type="number" disabled="true" name="id"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">Nom du son</ion-label>
-              <ion-input type="text" placeholder="Entrer le nom du son" name="nom"></ion-input>
-            </ion-item>
-            <ion-button expand="block">
-              Ajouter
-            </ion-button>
-          </form>
-        </ion-content>
-      </ng-template>
-    </ion-modal>
+
 
 
 

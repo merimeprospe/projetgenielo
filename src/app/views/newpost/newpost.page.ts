@@ -15,12 +15,7 @@ export class NewpostPage implements OnInit {
   closeModal() {
     this.modal.dismiss();
   }
-  closeModal1() {
-    this.modal.dismiss();
-  }
-  closeModal2() {
-    this.modal.dismiss();
-  }
+  
 
   ngOnInit() {
   }

@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { type } from 'os';
 import { DataService } from '../provade/data.service';
 import { RegisterPage } from '../view/register/register.page';
+import { ViewstatusPage } from '../views/viewstatus/viewstatus.page';
 
 @Component({
   selector: 'app-home',
@@ -10,42 +11,51 @@ import { RegisterPage } from '../view/register/register.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  Users:any
-  constructor(private ds:DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
-    ds.getuser().subscribe( res => {
+  Users: any
+  constructor(private ds: DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
+    ds.getuser().subscribe(res => {
       console.log(res);
       this.Users = res;
-  })
+    })
   }
 
   healt_icon: string = "outline";
   isCommentActive: boolean = false
-  
+
+  async openViewStatus() {
+    const modal = await this.modalCtrl.create({
+      component: ViewstatusPage
+    });
+    await modal.present();
+  }
+
+
   whislist() {
-    if ( this.healt_icon == "sharp") {
+    if (this.healt_icon == "sharp") {
       this.healt_icon = "outline"
     } else {
       this.healt_icon = "sharp"
     }
   }
 
-  Comment(){
-    if ( this.isCommentActive == false) {
+  Comment() {
+    if (this.isCommentActive == false) {
       this.isCommentActive = true
     } else {
       this.isCommentActive = false
-    }}
-    
-  async openUsere(user: any){
+    }
+  }
+
+  async openUsere(user: any) {
     const modal = await this.modalCtrl.create({
       component: RegisterPage,
-      componentProps: { id: user.id},
+      componentProps: { id: user.id },
       breakpoints: [0, 0.5, 0.8],
       initialBreakpoint: 0.5
     });
     await modal.present();
   }
-  async addUser(){
+  async addUser() {
     const alert = await this.alertCtrl.create({
       header: 'Add Note',
       inputs: [
@@ -65,7 +75,7 @@ export class HomePage {
           type: 'text'
         }
       ],
-      buttons:[
+      buttons: [
         {
           text: 'Cancel',
           role: 'Cancel'

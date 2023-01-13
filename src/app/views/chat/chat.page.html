@@ -1,9 +1,95 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>chat</ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-title class="">
+      Linkedin
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/listchat']">
+        <ion-icon name="chatbubble-ellipses"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="container1">
+    <div class="container">
+      <div class="header-bloc d-f-s-b">
+        <ion-buttons slot="start" [routerLink]="['/listchat']">
+          <ion-button><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+        </ion-buttons>
+        <div>
+          <ion-avatar>
+            <img src="assets/img/blackM.jpg" />
+          </ion-avatar>
+          <ion-label>Black M</ion-label>
+        </div>
+        <ion-buttons slot="start">
+          <ion-button><ion-icon name="ellipsis-horizontal"></ion-icon></ion-button>
+        </ion-buttons>
+      </div>
+      <div class="bloc-conversation">
+        <div class="bloc-contain">
+          <div class="message-from">
+            <div class="sms-container from">
+              <span>
+                <p> Hello as to live to brinth as to live to brinth
+                  as to live to brinth as to live to brinth as to live
+                  to brinth as to live to brinth </p>
+              </span>
+              <span class="d-f-e">12:09</span>
+            </div>
+          </div>
 
+          <div class="message-to">
+            <div class="sms-container to">
+              <span>
+                <p>Yes yes how are you? </p>
+              </span>
+              <span class="d-f-e">13:00</span>
+            </div>
+          </div>
+
+          <div class="message-from">
+            <div class="sms-container from">
+              <span>
+                <p> Fine thanks and you? </p>
+              </span>
+              <span class="d-f-e">12:09</span>
+            </div>
+          </div>
+          <div class="message-to">
+            <div class="sms-container to">
+              <span>
+                <p>Fine Dou yo smooked ?</p>
+              </span>
+              <span class="d-f-e">13:00</span>
+            </div>
+          </div>
+          <div class="message-from">
+            <div class="sms-container from">
+              <span>
+                <p>No no but i like beer </p>
+              </span>
+              <span class="d-f-e">12:09</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form>
+        <ion-buttons class="d-f-s-b">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="attach"></ion-icon>
+          </ion-button>
+          <ion-button shape="round" type="submit" fill="clear">
+            <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-textarea type="text" name="comment"></ion-textarea>
+      </form>
+    </div>
+  </div>
 </ion-content>

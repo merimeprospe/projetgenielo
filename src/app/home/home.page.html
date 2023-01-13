@@ -4,10 +4,10 @@
             Linkedin
         </ion-title>
         <ion-buttons slot="end">
-            <ion-button [routerLink]="['/chat']" routerLinkActive="router-link-active" >
+            <ion-button >
                 <ion-icon name="search"></ion-icon>
             </ion-button>
-            <ion-button>
+            <ion-button [routerLink]="['/listchat']" >
                 <ion-icon name="chatbubble-ellipses"></ion-icon>
             </ion-button>
         </ion-buttons>
@@ -24,48 +24,43 @@
                     <p>View all</p>
                 </div>
                 <div class="scroll-box">
-                    <div class="status">
-                        <img [src]="['assets/img/Tenor.jpg']" />
-                         <div class="bg-status"><p> Tenor</p></div>
-                    </div>
-                    <div class="status">
-                        <img [src]="['assets/img/blackM.jpg']" />
-                         <div class="bg-status"><p> Black M</p></div>
-                    </div>
-                    <div class="status">
+                    <div class="status" [routerLink]="['/newpost']">
                         <img [src]="['assets/img/naza.jpg']" />
-                        <div class="bg-status"><p> kevin kamla</p></div>
+                        <div class="bg-status">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                            <p>Naza</p>
+                        </div>
                     </div>
-                    <div class="status">
+                    <div class="status" (click)="openViewStatus()">
+                        <img [src]="['assets/img/blackM.jpg']" />
+                        <div class="bg-status">
+                            <p> Black M</p>
+                        </div>
+                    </div>
+                    <div class="status" (click)="openViewStatus()">
+                        <img [src]="['assets/img/Tenor.jpg']" />
+                        <div class="bg-status">
+                            <p> Tenor kamla</p>
+                        </div>
+                    </div>
+                    <div class="status" (click)="openViewStatus()">
                         <img [src]="['assets/img/gims.jpg']" />
-                         <div class="bg-status"><p>Maitre Gims</p></div>
+                        <div class="bg-status">
+                            <p>Maitre Gims</p>
+                        </div>
                     </div>
                     <div class="status">
                         <img [src]="['assets/img/sort.jpg']" />
-                         <div class="bg-status"><p> Maahlox</p></div>
+                        <div class="bg-status">
+                            <p> Maahlox</p>
+                        </div>
                     </div>
                     <div class="status">
                         <img [src]="['assets/img/maa.jpg']" />
-                         <div class="bg-status"><p> kevin kamla</p></div>
+                        <div class="bg-status">
+                            <p> kevin kamla</p>
+                        </div>
                     </div>
-                    <!-- <div class="status">
-                        <ion-img [src]="['assets/img/Tenor.jpg']"></ion-img>
-                    </div>
-                    <div class="status">
-                        <ion-img [src]="['assets/img/blackM.jpg']"></ion-img>
-                    </div>
-                    <div class="status">
-                        <ion-img [src]="['assets/img/naza.jpg']"></ion-img>
-                    </div>
-                    <div class="status">
-                        <ion-img [src]="['assets/img/gims.jpg']"></ion-img>
-                    </div>
-                    <div class="status">
-                        <ion-img [src]="['assets/img/sort.jpg']"></ion-img>
-                    </div>
-                    <div class="status">
-                        <ion-img [src]="['assets/img/maa.jpg']"></ion-img>
-                    </div> -->
                 </div>
             </div>
             <div class="bloc-publication">
@@ -82,13 +77,13 @@
                         </ion-item>
                         <ion-buttons>
                             <ion-button>
-                                <ion-icon name="add"></ion-icon>
+                                <ion-icon name="ellipsis-horizontal"></ion-icon>
                             </ion-button>
                         </ion-buttons>
                     </ion-card-header>
                     <ion-card-content>
                         <p>you can add configuration options for Jasmine here the possible options
-                            are listed at asminel for example, you can disable the random 
+                            are listed at asminel for example, you can disable the random
                             execution with `random: false execution with `random: false</p>
                         <div class="bloc-like-comment d-f-s-b">
                             <span>20k Likes</span>
@@ -137,7 +132,7 @@
                         </ion-item>
                         <ion-buttons>
                             <ion-button>
-                                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                                <ion-icon name="ellipsis-horizontal"></ion-icon>
                             </ion-button>
                         </ion-buttons>
                     </ion-card-header>
@@ -257,7 +252,7 @@
                         </ion-item>
                         <ion-buttons>
                             <ion-button>
-                                <ion-icon name="add"></ion-icon>
+                                <ion-icon name="ellipsis-horizontal"></ion-icon>
                             </ion-button>
                         </ion-buttons>
                     </ion-card-header>
@@ -299,22 +294,18 @@
                     </div>
                 </ion-card>
             </div>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                <ion-fab-button (click)="addUser()">
+                    <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+            <ion-list>
+                <ion-item *ngFor="let item of Users" (click)="openUsere(item)">
+                    <ion-label>
+                        {{item.username}}
+                    </ion-label>
+                </ion-item>
+            </ion-list>
         </div>
     </div>
 </ion-content>
-
-<!-- <ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="addUser()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <ion-list>
-    <ion-item *ngFor="let item of Users" (click)="openUsere(item)">
-      <ion-label>
-        {{item.username}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
-</ion-content> -->
-

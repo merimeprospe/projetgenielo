@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonItem, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPage implements OnInit {
 
-  constructor() { }
+  userToChat: any
+
+  constructor(private modal: ModalController) { }
+
+  closeModal() {
+    this.modal.dismiss();
+  }
+
 
   ngOnInit() {
+    this.userToChat = localStorage.getItem("userToChat");
+
   }
 
 }
+

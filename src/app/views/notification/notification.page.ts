@@ -9,6 +9,10 @@ export class NotificationPage implements OnInit {
 
   constructor() { }
 
+  openChat(){
+    
+  }
+  
   ngOnInit() {
   }
 

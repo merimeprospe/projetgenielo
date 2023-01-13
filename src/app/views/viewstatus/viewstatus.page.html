@@ -1,0 +1,26 @@
+<div class="bloc_header">
+  <ion-buttons slot="end">
+    <ion-button (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>
+
+<ion-content [fullscreen]="true">
+  <div class="status-contain">
+    <ion-img [src]="['assets/img/gims.jpg']"></ion-img>
+  </div>
+  <div class="blocButton ">
+    <ion-buttons slot="start" class="d-f-c">
+      <ion-button (click)="previewStauts()" class="buttonPrev ">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="nextStatus()" class="buttonNext ">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+
+
+</ion-content>
