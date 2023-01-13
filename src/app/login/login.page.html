@@ -1,0 +1,28 @@
+
+<ion-content>
+
+  <div class="contener">
+    <div class="texte">
+      <p class="title"><i>Employ Me </i><span> <br>Connexion</span></p>
+      <h4>Connectez-vous et découvrez les dernières offres d'emploi</h4>
+    </div>
+   
+  <div class="formulaire">
+    <div class="item">
+        <ion-icon name="mail" size="medium"></ion-icon>
+        <ion-input  [(ngModel)]="user.email" type="email" placeholder="Email"></ion-input>
+    </div>
+    <div class="item">
+        <ion-icon name="lock-closed" size="medium"></ion-icon>
+        <ion-input  [(ngModel)]="user.password" type="password" placeholder="Mot de passe"></ion-input>
+    </div>
+  </div>
+  <ion-button shape="round" (click)="connection()"><p>Se Connecter</p></ion-button>
+  <div class="options">
+    <p>Pas de compte? <ion-label [routerLink]="['register']">Inscrivez-vous!</ion-label></p>
+    <ion-label [routerLink]="['reset-password']">Mot de passe oublié?</ion-label>
+  </div>
+  
+  </div>
+  </ion-content>
+  

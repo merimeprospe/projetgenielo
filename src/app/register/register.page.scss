@@ -1,0 +1,112 @@
+ion-content{
+    --background: rgb(214, 62, 57);
+    --overflow:hidden; 
+}
+
+ion-toolbar{
+    --background: rgb(214, 62, 57);
+}
+
+.contener{
+    background: white;
+    height: 100%;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    z-index: 2;
+    margin-top: 150px;
+    padding-top: 10px;
+    
+    
+}
+
+.item{
+    border-radius: 40px;
+    background:rgb(248, 238, 238);
+    height: 60px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.formulaire{
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 50px;
+    
+}
+
+ion-button{
+    border-radius: 100px;
+    height: 70px;
+    width: 170px;
+    margin-left: 25%; 
+    --background:rgb(214, 62, 57);
+    margin-top: 20px;  
+    p{
+        font-size: medium;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+.title{
+    
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+i{
+    color: rgb(214, 62, 57);
+    font-weight: 60;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+span{
+    font-weight: 40;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.options{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ion-label{
+    color:rgb(214, 62, 57);
+}
+
+
+
+ion-input{
+    height: auto;
+}
+
+ion-back-button{
+    color:white;
+}
+
+.error{
+	padding: 10px;
+    border: 1px solid rgb(219, 1, 1);
+    border-radius: 5px;
+    position: absolute;
+    top: 86px;
+    left: 8px;
+    margin-bottom: 20px;
+    z-index: 9;
+	gap: 28px;
+	right: 13px;
+    color: rgb(219, 1, 1);
+    display: flex;
+    justify-content: space-between;
+}
