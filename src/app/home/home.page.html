@@ -24,7 +24,7 @@
                     <p>View all</p>
                 </div>
                 <div class="scroll-box">
-                    <div class="status" [routerLink]="['/newpost']">
+                    <div class="status"(click)="openAddStatus()">
                         <img [src]="['assets/img/naza.jpg']" />
                         <div class="bg-status">
                             <ion-icon name="add-circle-outline"></ion-icon>

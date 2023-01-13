@@ -49,6 +49,10 @@ const routes: Routes = [
         path: 'viewstatus',
         loadChildren: () => import('../../views/viewstatus/viewstatus.module').then( m => m.ViewstatusPageModule)
       },
+      {
+        path: 'addstatus',
+        loadChildren: () => import('../../views/addstatus/addstatus.module').then( m => m.AddstatusPageModule)
+      },
     ]
   }
 ];

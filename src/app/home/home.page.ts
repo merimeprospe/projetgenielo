@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { type } from 'os';
 import { DataService } from '../provade/data.service';
 import { RegisterPage } from '../view/register/register.page';
+import { AddstatusPage } from '../views/addstatus/addstatus.page';
 import { ViewstatusPage } from '../views/viewstatus/viewstatus.page';
 
 @Component({
@@ -25,6 +26,13 @@ export class HomePage {
   async openViewStatus() {
     const modal = await this.modalCtrl.create({
       component: ViewstatusPage
+    });
+    await modal.present();
+  }
+  
+  async openAddStatus() {
+    const modal = await this.modalCtrl.create({
+      component: AddstatusPage
     });
     await modal.present();
   }

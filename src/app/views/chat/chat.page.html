@@ -43,7 +43,6 @@
               <span class="d-f-e">12:09</span>
             </div>
           </div>
-
           <div class="message-to">
             <div class="sms-container to">
               <span>
@@ -52,7 +51,14 @@
               <span class="d-f-e">13:00</span>
             </div>
           </div>
-
+          <div class="message-from">
+            <div class="sms-container from">
+              <span>
+                <p> Fine thanks and you? </p>
+              </span>
+              <span class="d-f-e">12:09</span>
+            </div>
+          </div>
           <div class="message-from">
             <div class="sms-container from">
               <span>
@@ -79,17 +85,21 @@
           </div>
         </div>
       </div>
-      <form>
-        <ion-buttons class="d-f-s-b">
-          <ion-button shape="round" fill="clear">
+    </div>
+    <form>
+      <div class="textarea-sticker d-f-s-b">
+        <ion-buttons shape="round" fill="clear">
+          <ion-button  fill="clear" shape="round">
             <ion-icon name="attach"></ion-icon>
-          </ion-button>
-          <ion-button shape="round" type="submit" fill="clear">
-            <ion-icon slot="icon-only" name="send-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
         <ion-textarea type="text" name="comment"></ion-textarea>
-      </form>
-    </div>
+      </div>
+      <ion-buttons class="button-send d-f-c" slot="end">
+        <ion-button shape="round" type="submit" fill="clear">
+          <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </form>
   </div>
 </ion-content>
