@@ -29,7 +29,7 @@
       </div>
 
       <ion-list>
-        <ion-item [routerLink]="['/chat']">
+        <ion-item [routerLink]="['/chat',item.id]" *ngFor="let item of conversation">
           <ion-avatar>
             <img [src]="['assets/img/blackM.jpg']" />
           </ion-avatar>
@@ -38,42 +38,7 @@
             <p>Hello a is to fof ffkezf fzpeff efe ...</p>
           </ion-label>
         </ion-item >
-        <ion-item [routerLink]="['/chat']">
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item [routerLink]="['/chat']">
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
+        
       </ion-list>
 
     </div>
