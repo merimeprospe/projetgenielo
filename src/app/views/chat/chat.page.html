@@ -33,63 +33,49 @@
       </div>
       <div class="bloc-conversation">
         <div class="bloc-contain">
-          <div class="message-from">
-            <div class="sms-container from">
-              <span>
-                <p> Hello as to live to brinth as to live to brinth
-                  as to live to brinth as to live to brinth as to live
-                  to brinth as to live to brinth </p>
-              </span>
-              <span class="d-f-e">12:09</span>
+          <div *ngFor="let item of message">
+            <div class="message-from" *ngIf="item.user != Info.user.id ">
+              <div class="sms-container from">
+                <span>
+                  <p>{{item.message}}</p>
+                </span>
+                <span>
+                  <p>{{item.num}}</p>
+                </span>
+                <span class="d-f-e">12:09</span>
+              </div>
             </div>
-          </div>
-
-          <div class="message-to">
-            <div class="sms-container to">
-              <span>
-                <p>Yes yes how are you? </p>
-              </span>
-              <span class="d-f-e">13:00</span>
-            </div>
-          </div>
-
-          <div class="message-from">
-            <div class="sms-container from">
-              <span>
-                <p> Fine thanks and you? </p>
-              </span>
-              <span class="d-f-e">12:09</span>
-            </div>
-          </div>
-          <div class="message-to">
-            <div class="sms-container to">
-              <span>
-                <p>Fine Dou yo smooked ?</p>
-              </span>
-              <span class="d-f-e">13:00</span>
-            </div>
-          </div>
-          <div class="message-from">
-            <div class="sms-container from">
-              <span>
-                <p>No no but i like beer </p>
-              </span>
-              <span class="d-f-e">12:09</span>
+            <div class="message-to" *ngIf="item.user == Info.user.id ">
+              <div class="sms-container to">
+                <span>
+                  <p>{{item.message}}</p>
+                  <span>
+                    <p>{{item.num}}</p>
+                  </span>
+                </span>
+                <span class="d-f-e">13:00</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <form>
-        <ion-buttons class="d-f-s-b">
-          <ion-button shape="round" fill="clear">
+    </div>
+    <form>
+      <div class="textarea-sticker d-f-s-b">
+        <ion-buttons shape="round" fill="clear">
+          <ion-button  fill="clear" shape="round">
             <ion-icon name="attach"></ion-icon>
           </ion-button>
-          <ion-button shape="round" type="submit" fill="clear" (click)="send()">
-            <ion-icon slot="icon-only" name="send-outline"></ion-icon>
-          </ion-button>
+
         </ion-buttons>
-        <ion-textarea [(ngModel)]="sms.ms" type="text" name="comment"></ion-textarea>
-      </form>
-    </div>
+        <ion-textarea [(ngModel)]="sms.ms" type="text" name="comment" placeholder="Enter your message"></ion-textarea>
+      </div>
+      <ion-buttons class="button-send d-f-c" slot="end" (click)="send()">
+        <ion-button shape="round" type="submit" fill="clear">
+          <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </form>
+
   </div>
 </ion-content>

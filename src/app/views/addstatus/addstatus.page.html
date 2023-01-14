@@ -1,0 +1,59 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-title class="">
+      Linkedin
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" fill="clear">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content class="ion-no-border">
+    <div class="container1">
+      <div class="container">
+        <ion-card>
+          <form action="">
+            <ion-card-content>
+              <ion-avatar>
+                <img [src]="['assets/img/naza.jpg']" />
+              </ion-avatar>
+              <ion-label position="fixed">Post</ion-label>
+              <ion-textarea type="text" name="postContent" placeholder="Enter your post"></ion-textarea>
+              <label class="label-img d-f-c" for="image" position="stacked">
+                <ion-icon slot="start" name="images"></ion-icon>|<ion-icon slot="start" name="videocam"></ion-icon>
+                Upload attachment</label>
+              <input class="d-n" type="file" name="image" id="image" />
+              <input class="d-n" type="file" name="video" id="video" />
+            </ion-card-content>
+            <div class="">
+              <ion-buttons slot="start">
+                <ion-button id="sendImg">
+                  <ion-icon class="sendIconImg" slot="start" name="image"></ion-icon> <label for="image">Photo</label>
+                </ion-button>
+                <ion-button id="sendVid">
+                  <ion-icon class="sendIconVid" slot="start" name="videocam"></ion-icon><label for="video">Video</label>
+                </ion-button>
+              </ion-buttons>
+            </div>
+          </form>
+        </ion-card>
+        <div class="d-f-e send">
+          <ion-button shape="round" type="submit">
+            <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </ion-content>

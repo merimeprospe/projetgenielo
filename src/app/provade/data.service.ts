@@ -15,9 +15,19 @@ export interface User{
 }
 export interface Message{
   id?: string;
+  num: number;
   user: string;
+  userto: string;
   date: string
   message: string
+  mes:string
+}
+export interface Mess{
+  id?: string;
+  user1: string;
+  user2: string;
+  message: string
+  mes:string
 }
 export interface Profil{
   id?: string;
@@ -61,7 +71,22 @@ export interface Statut{
 export class DataService {
 
   constructor(private firestore: Firestore) { }
+/*-------------------------------Mess------------------------------------------*/
 
+getmes(): Observable<Mess[]>{
+  const userRef = collection(this.firestore, 'Mess')
+  
+  return collectionData(userRef, {idField: 'id'}) as Observable<Mess[]>;
+}
+getMessById(id: any): Observable<Mess> {
+  const userDocRef = doc(this.firestore, `Mess/${id}`);
+  return docData(userDocRef, {idField: 'id'}) as Observable<Mess>;
+}
+addMess(Message: Mess) {
+  const userRef = collection(this.firestore, 'Mess');
+  
+  return addDoc(userRef, Message);
+}
 /*-------------------------------Message------------------------------------------*/
 
 getmessage(): Observable<Message[]>{
