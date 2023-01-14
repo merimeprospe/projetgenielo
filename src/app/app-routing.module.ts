@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'login/reset-password',
     loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },  {
+    path: 'listjoboffer',
+    loadChildren: () => import('./views/listjoboffer/listjoboffer.module').then( m => m.ListjobofferPageModule)
   },
+
 
 
 
