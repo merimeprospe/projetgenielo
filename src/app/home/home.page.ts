@@ -21,6 +21,15 @@ export class HomePage implements OnInit{
     ds.getPublication().subscribe(res => {
       console.log(res);
       this.Users = res;
+      for (let i = 0; i < this.Users.length-1; i++) {
+        for (let j = i; j < this.Users.length; j++) {
+          if (this.Users[i].num < this.Users[j].num) {
+            this.con=this.Users[i]
+            this.Users[i]=this.Users[j]
+            this.Users[j]= this.con
+          }
+        }
+      }
       this.Users.forEach((el: any) => {
         el.comm = false
       });

@@ -67,9 +67,9 @@ export class NewpostPage implements OnInit {
     })
     console.log("ok");
     this.file= null
-}
-closeModal(){
-  this.modal.dismiss();
-}
+  }
+  closeModal(){
+    this.modal.dismiss();
+  }
 
 }
