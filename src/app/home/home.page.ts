@@ -68,6 +68,7 @@ export class HomePage implements OnInit{
       post: od,
       date: new Date().toISOString()
     })
+    this.com = ''
   }
 
   whislist() {
