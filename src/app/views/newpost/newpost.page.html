@@ -7,7 +7,7 @@
       <ion-button>
         <ion-icon name="search"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button [routerLink]="['/listchat']">
         <ion-icon name="chatbubble-ellipses"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -84,13 +84,13 @@
             <ion-label position="fixed">Description</ion-label>
             <ion-textarea type="text" name="postContent" placeholder="Ex: topics, schedule, etc"></ion-textarea>
             <ion-label position="fixed">Date start</ion-label>
-            <ion-input type="date" placeholder="Enter title"></ion-input>
+            <ion-input type="date" placeholder="Select date"></ion-input>
             <ion-label position="fixed">Hours start</ion-label>
-            <ion-input type="text" placeholder="Enter title"></ion-input>
+            <ion-input type="text" placeholder="08:00"></ion-input>
             <ion-label position="fixed">Hours end</ion-label>
-            <ion-input type="text" placeholder="Enter title"></ion-input>
+            <ion-input type="text" placeholder="17:00"></ion-input>
             <ion-label position="fixed">Duration</ion-label>
-            <ion-select value="Indeterminé" multiple="true" placeholder="Select Duration">
+            <ion-select value="Indeterminé" multiple="true" placeholder="Select duration">
               <ion-select-option value="peperoni">Determiné</ion-select-option>
               <ion-select-option value="hawaii">Indeterminé</ion-select-option>
             </ion-select>

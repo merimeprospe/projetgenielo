@@ -117,11 +117,26 @@ ion-content {
       padding-bottom: 7px;
 
       ion-card-content {
+        h3 {
+          color: var(--ion-color-dark);
+          font-weight: 600;
+        }
+
         p {
           text-align: justify;
           margin-bottom: 5px;
           border-radius: 10px
         }
+
+        .infoToJob {
+          margin: 5px auto auto 10px;
+        }
+
+        h4 {
+          color: var(--ion-color-dark);
+          background-color: var(--ion-color-light-shade);
+        }
+
       }
     }
 
@@ -187,8 +202,10 @@ ion-content {
 
     .bloc-comment {
       .bloc-contain {
-        height: 223px;
+        height: auto;
+        min-height: 100px;
         overflow-y: scroll;
+        max-height: 252px;
         border-top: 1px solid #eaeaea;
         padding-top: 10px;
 
