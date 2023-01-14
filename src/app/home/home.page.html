@@ -99,7 +99,7 @@
                             <ion-button (click)="whislist()">
                                 <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
                             </ion-button>
-                            <ion-button (click)="Comment()">
+                            <ion-button (click)="Commentid(item)">
                                 <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
                             </ion-button>
                             <ion-button>
@@ -107,14 +107,38 @@
                             </ion-button>
                         </ion-buttons>
                     </div>
-                    <div class="bloc-comment" *ngIf="isCommentActive">
+                    <div class="bloc-comment" *ngIf="item.comm">
                         <div class="comment-chat">
-
+                            <div class="bloc-contain">
+                                <div  *ngFor="let ite of comment">
+                                    <div *ngIf="ite.post.id == item.id">
+                                        <div class="message-from" *ngIf="ite.user != Info.user.id ">
+                                            <ion-avatar>
+                                                <img [src]="['assets/img/maa.jpg']" />
+                                            </ion-avatar>
+                                            <div class="sms-container from">
+                                                <span>
+                                                    <p> {{ite.message}}</p>
+                                                </span>
+                                                <span class="d-f-e">12:09</span>
+                                            </div>
+                                        </div>
+                                        <div class="message-to" *ngIf="ite.user == Info.user.id ">
+                                            <div class="sms-container to">
+                                                <span>
+                                                    <p>{{ite.message}}</p>
+                                                </span>
+                                                <span class="d-f-e">13:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <form>
-                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <ion-textarea [(ngModel)]="com" name="comment" type="text"></ion-textarea>
                             <div class="d-f-e send">
-                                <ion-button shape="round" type="submit">
+                                <ion-button shape="round" type="submit" (click)="send(item)">
                                     <ion-icon slot="icon-only" name="send-outline"></ion-icon>
                                 </ion-button>
                             </div>
@@ -287,7 +311,7 @@
                             </div>
                         </div>
                         <form>
-                            <ion-textarea name="comment" type="text"></ion-textarea>
+                            <ion-textarea [(ngModel)]="com" name="comment" type="text"></ion-textarea>
                             <div class="d-f-e send">
                                 <ion-button shape="round" type="submit">
                                     <ion-icon slot="icon-only" name="send-outline"></ion-icon>

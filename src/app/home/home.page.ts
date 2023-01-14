@@ -14,10 +14,30 @@ import { ViewstatusPage } from '../views/viewstatus/viewstatus.page';
 export class HomePage implements OnInit{
   Users: any
   Info: any
+  com: any
+  comment: any
+  con={}
   constructor(private ds: DataService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
     ds.getPublication().subscribe(res => {
       console.log(res);
       this.Users = res;
+      this.Users.forEach((el: any) => {
+        el.comm = false
+      });
+      console.log("fffdf fdtddddddddddddddd",this.Users);
+    })
+    ds.getComment().subscribe(res => {
+      console.log(res);
+      this.comment = res;
+      for (let i = 0; i < this.comment.length-1; i++) {
+        for (let j = i; j < this.comment.length; j++) {
+          if (this.comment[i].num > this.comment[j].num) {
+            this.con=this.comment[i]
+            this.comment[i]=this.comment[j]
+            this.comment[j]= this.con
+          }
+        }
+      }
     })
   }
   ngOnInit() {
@@ -40,6 +60,15 @@ export class HomePage implements OnInit{
     await modal.present();
   }
 
+  send(od:any){
+    this.ds.addComment({
+      user: this.Info.user.id,
+      num: this.comment.length,
+      message: this.com,
+      post: od,
+      date: new Date().toISOString()
+    })
+  }
 
   whislist() {
     if (this.healt_icon == "sharp") {
@@ -55,6 +84,17 @@ export class HomePage implements OnInit{
     } else {
       this.isCommentActive = false
     }
+  }
+  Commentid(ob:any) {
+    this.Users.forEach((el: any) => {
+     if(el.id==ob.id){
+       if (el.comm == false) {
+        el.comm = true
+       } else {
+        el.comm = false
+       }
+     }
+    });
   }
 
   async openUsere(user: any) {

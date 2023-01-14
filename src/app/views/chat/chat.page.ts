@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IonItem, ModalController } from '@ionic/angular';
 import { DataService } from 'src/app/provade/data.service';
 
@@ -15,10 +16,17 @@ export class ChatPage implements OnInit {
   }
   Info:any
   mess:any
+  id:any
+  conf:any
   ms:any
   message:any[]=[]
   messages:any[]=[]
-  constructor(private modal: ModalController, private ds: DataService,) { 
+  constructor(private modal: ModalController, private ds: DataService,private route: ActivatedRoute) { 
+    this.id = this.route.snapshot.paramMap.get('id');
+    ds.getMessById(this.id).subscribe(res => {
+      console.log(res);
+      this.conf = res;
+    })
     ds.getmes().subscribe(res => {
       console.log(res);
       this.mess = res;
@@ -28,7 +36,7 @@ export class ChatPage implements OnInit {
       this.messages = []
       this.ms = res;
       this.ms.forEach((el:any) => {
-        if (el.mes=="h0lcTCdha3Re7YCtqTBtAppO6ihmlNjCFaBG2X6j") {
+        if (el.mes==this.conf.mes) {
           this.message.push(el)
         }
       });

@@ -10,7 +10,7 @@ export class ListchatPage implements OnInit {
 
   Info:any
   mess:any
-  conversation:any
+  conversation:any[]= []
   userToChat = {
     "id":'1',
     "name":"Black M",
@@ -26,6 +26,7 @@ export class ListchatPage implements OnInit {
           this.conversation.push(el)
         }
       });
+      console.log(this.conversation);
     })
   }
 

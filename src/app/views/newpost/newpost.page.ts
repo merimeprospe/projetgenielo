@@ -18,7 +18,13 @@ export class NewpostPage implements OnInit {
     titre: ""
   }
   Info:any
-  constructor(private ds: DataService,) { }
+  post:any
+  constructor(private ds: DataService,) { 
+    ds.getPublication().subscribe(res => {
+      console.log(res);
+      this.post = res;
+    })
+  }
 
   async getImage(){
     const image=await Camera.getPhoto({
@@ -52,7 +58,8 @@ export class NewpostPage implements OnInit {
       user: this.Info.user.id,
       Contenu: this.p.contenu,
       file: this.file,
-      date: new Date
+      date: new Date(),
+      num: this.post.length
     })
     this.ds.addImage({
       file: this.file,

@@ -13,6 +13,14 @@ export interface User{
   username: string;
   role: string;
 }
+export interface Comment{
+  id?: string;
+  num: number;
+  user: string;
+  post: string;
+  date: string
+  message: string
+}
 export interface Message{
   id?: string;
   num: number;
@@ -47,6 +55,7 @@ export interface Publication{
   id?: string;
   user: string;
   titre: string;
+  num: number;
   Contenu: string;
   file: string;
   date: Date
@@ -71,6 +80,22 @@ export interface Statut{
 export class DataService {
 
   constructor(private firestore: Firestore) { }
+
+  /*-------------------------------Comment------------------------------------------*/
+
+getComment(): Observable<Comment[]>{
+  const userRef = collection(this.firestore, 'Comment')
+  
+  return collectionData(userRef, {idField: 'id'}) as Observable<Comment[]>;
+}
+getMCommentById(id: any): Observable<Comment> {
+  const userDocRef = doc(this.firestore, `Comment/${id}`);
+  return docData(userDocRef, {idField: 'id'}) as Observable<Comment>;
+}
+addComment(Message: Comment) {
+  const userRef = collection(this.firestore, 'Comment');
+  return addDoc(userRef, Message);
+}
 /*-------------------------------Mess------------------------------------------*/
 
 getmes(): Observable<Mess[]>{
