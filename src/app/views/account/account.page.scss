@@ -1,0 +1,80 @@
+ion-content{
+    --background:var(--ion-color-light-tint);
+}
+
+.header{
+background:rgb(214, 62, 57);
+height: 180px;
+padding-top: 1px;
+}
+
+.name{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.space-beetween{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
+}
+
+.followings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        color: white;
+        margin: 8px 0px 0px 0px;
+    }
+    ion-badge{
+        margin-top: -1px;
+    }
+}
+
+.img-box{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        height: 130px;
+        width: 130px;
+    }
+}
+
+.border-white{
+    border: 4px solid white;
+    border-radius: 50%;
+    width: fit-content;
+}
+
+.border-black{
+    border: 5px solid black;
+    border-radius: 50%;
+    width: fit-content;
+}
+
+.flexe{
+    display:flex;
+    justify-content: center;
+    margin-top: -76px;
+}
+
+.domain{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-bouton{
+    position: relative;
+    top: 18px;
+    left: 190px;
+}
+
+.chat-bouton{
+    position: relative;
+    top: 18px;
+    left: 40px;
+}
