@@ -23,19 +23,19 @@ ion-toolbar {
   height: 50px;
 
   ion-title {
-    color: white;
+    color: var(--ion-color-primary-contrast);
     font-weight: 600;
     font-size: 25px;
   }
 
   ion-icon {
-    color: white;
+    color: var(--ion-color-primary-contrast);
     font-size: 24px;
   }
 }
 
 ion-content {
-  --background: white;
+  --background: var(--ion-color-primary-contrast);
 }
 
 .container1 {
@@ -45,8 +45,8 @@ ion-content {
 
 .container {
   position: absolute;
-  background-color: #ffffff;
-  border: 1px solid white;
+  background-color: var(--ion-color-primary-contrast);
+  border: 1px solid var(--ion-color-primary-contrast);
   border-radius: 30px 30px 0 0;
   min-height: 100%;
   width: 100%;
@@ -96,7 +96,7 @@ ion-content {
         }
 
         ion-icon {
-          color: #fff;
+          color: var(--ion-color-primary-contrast);
           position: absolute;
           bottom: 22px;
           font-size: 35px;
@@ -122,6 +122,7 @@ ion-content {
           font-weight: 600;
         }
 
+        
         p {
           text-align: justify;
           margin-bottom: 5px;
@@ -130,11 +131,17 @@ ion-content {
 
         .infoToJob {
           margin: 5px auto auto 10px;
+          p {
+            position: relative;
+            margin-left: 7px;
+          }
         }
 
         h4 {
-          color: var(--ion-color-dark);
-          background-color: var(--ion-color-light-shade);
+          background-color: #ff6666;
+          padding: 5px;
+          border-radius: 10px;
+          color: white;
         }
 
       }
@@ -221,7 +228,7 @@ ion-content {
           }
 
           .from {
-            background-color: white;
+            background-color: var(--ion-color-primary-contrast);
             border-color: rgb(231, 231, 231);
             padding: 10px;
             color: #474646;
@@ -237,7 +244,7 @@ ion-content {
             background-color: var(--ion-color-color-red);
             border-color: var(--ion-color-color-red);
             padding: 10px;
-            color: white;
+            color: var(--ion-color-primary-contrast);
           }
         }
 
@@ -272,7 +279,7 @@ ion-content {
         }
 
         ion-button {
-          border: 1px solid white;
+          border: 1px solid var(--ion-color-primary-contrast);
           border-radius: 45px;
           --background: var(--ion-color-color-red);
 

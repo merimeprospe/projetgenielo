@@ -110,7 +110,7 @@
                     <div class="bloc-comment" *ngIf="item.comm">
                         <div class="comment-chat">
                             <div class="bloc-contain">
-                                <div  *ngFor="let ite of comment">
+                                <div *ngFor="let ite of comment">
                                     <div *ngIf="ite.post.id == item.id">
                                         <div class="message-from" *ngIf="ite.user != Info.user.id ">
                                             <ion-avatar>
@@ -146,181 +146,7 @@
                     </div>
                 </ion-card>
             </div>
-            <div class="bloc-publication">
-                <ion-card>
-                    <ion-card-header>
-                        <ion-item>
-                            <ion-avatar>
-                                <img [src]="['assets/img/naza.jpg']" />
-                            </ion-avatar>
-                            <ion-label>
-                                <h3>Maahlox SARL</h3>
-                                <p>Artist hit</p>
-                            </ion-label>
-                        </ion-item>
-                        <ion-buttons>
-                            <ion-button>
-                                <ion-icon name="ellipsis-horizontal"></ion-icon>
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <p>you can add configuration options for Jasmine here the possible options
-                            are listed at asminel for example, you can disable the random
-                            execution with `random: false execution with `random: false</p>
-                        <div class="bloc-like-comment d-f-s-b">
-                            <span>20k Likes</span>
-                            <span>357k Comments</span>
-                        </div>
-                    </ion-card-content>
-                    <div class="bloc-buttons">
-                        <ion-buttons slot="start" class="d-f-s-b">
-                            <ion-button (click)="whislist()">
-                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
-                            </ion-button>
-                            <ion-button (click)="Comment()">
-                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
-                            </ion-button>
-                            <ion-button>
-                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
-                            </ion-button>
-                        </ion-buttons>
-                    </div>
-                    <div class="bloc-comment" *ngIf="isCommentActive">
-                        <div class="comment-chat">
 
-                        </div>
-                        <form>
-                            <ion-textarea name="comment" type="text"></ion-textarea>
-                            <div class="d-f-e send">
-                                <ion-button shape="round" type="submit">
-                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
-                                </ion-button>
-                            </div>
-                        </form>
-                    </div>
-                </ion-card>
-            </div>
-
-            <div class="bloc-publication">
-                <ion-card>
-                    <ion-card-header>
-                        <ion-item>
-                            <ion-avatar>
-                                <img [src]="['assets/img/maa.jpg']" />
-                            </ion-avatar>
-                            <ion-label>
-                                <h5>Maahlox SARL</h5>
-                                <p>5 days ago</p>
-                            </ion-label>
-                        </ion-item>
-                        <ion-buttons>
-                            <ion-button>
-                                <ion-icon name="ellipsis-horizontal"></ion-icon>
-                            </ion-button>
-                        </ion-buttons>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <p>you can add configuration options for Jasmine here the possible options
-                            are listed at jasmine. github.i o/api/edge/ Configurati.</p>
-                        <ion-img [src]="['assets/img/sort.jpg']"></ion-img>
-                        <div class="bloc-like-comment d-f-s-b">
-                            <span>1k Likes</span>
-                            <span>365 Comments</span>
-                        </div>
-                    </ion-card-content>
-                    <div class="bloc-buttons">
-                        <ion-buttons slot="start" class="d-f-s-b">
-                            <ion-button (click)="whislist()">
-                                <ion-icon slot="start" name="heart-{{healt_icon}}"></ion-icon><span>Liked </span>
-                            </ion-button>
-                            <ion-button (click)="Comment()">
-                                <ion-icon slot="start" name="mail-outline"></ion-icon><span>Comment </span>
-                            </ion-button>
-                            <ion-button>
-                                <ion-icon slot="start" name="share-outline"></ion-icon><span>Share </span>
-                            </ion-button>
-                        </ion-buttons>
-                    </div>
-                    <div class="bloc-comment" *ngIf="isCommentActive">
-                        <div class="comment-chat">
-                            <div class="bloc-contain">
-                                <div class="message-from">
-                                    <ion-avatar>
-                                        <img [src]="['assets/img/maa.jpg']" />
-                                    </ion-avatar>
-                                    <div class="sms-container from">
-                                        <span>
-                                            <p> Hello as to live to brinth as to live</p>
-                                        </span>
-                                        <span class="d-f-e">12:09</span>
-                                    </div>
-                                </div>
-                                <div class="message-from">
-                                    <ion-avatar>
-                                        <img [src]="['assets/img/Tenor.jpg']" />
-                                    </ion-avatar>
-                                    <div class="sms-container from">
-                                        <span>
-                                            <p> Fine thanks and you? </p>
-                                        </span>
-                                        <span class="d-f-e">12:09</span>
-                                    </div>
-                                </div>
-                                <div class="message-from">
-                                    <ion-avatar>
-                                        <img [src]="['assets/img/gims.jpg']" />
-                                    </ion-avatar>
-                                    <div class="sms-container from">
-                                        <span>
-                                            <p>No no but i like beer </p>
-                                        </span>
-                                        <span class="d-f-e">12:09</span>
-                                    </div>
-                                </div>
-                                <div class="message-from">
-                                    <ion-avatar>
-                                        <img [src]="['assets/img/naza.jpg']" />
-                                    </ion-avatar>
-                                    <div class="sms-container from">
-                                        <span>
-                                            <p>Fine Dou yo smooked ?</p>
-                                        </span>
-                                        <span class="d-f-e">13:00</span>
-                                    </div>
-                                </div>
-                                <div class="message-from">
-                                    <ion-avatar>
-                                        <img [src]="['assets/img/blackM.jpg']" />
-                                    </ion-avatar>
-                                    <div class="sms-container from">
-                                        <span>
-                                            <p>Fine Dou yo smooked ?</p>
-                                        </span>
-                                        <span class="d-f-e">13:00</span>
-                                    </div>
-                                </div>
-                                <div class="message-to">
-                                    <div class="sms-container to">
-                                        <span>
-                                            <p>Fine Dou yo smooked ?</p>
-                                        </span>
-                                        <span class="d-f-e">13:00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <form>
-                            <ion-textarea [(ngModel)]="com" name="comment" type="text"></ion-textarea>
-                            <div class="d-f-e send">
-                                <ion-button shape="round" type="submit">
-                                    <ion-icon slot="icon-only" name="send-outline"></ion-icon>
-                                </ion-button>
-                            </div>
-                        </form>
-                    </div>
-                </ion-card>
-            </div>
 
             <div class="bloc-publication">
                 <ion-card>
@@ -345,7 +171,7 @@
                         <p>you can add configuration options for Jasmine here the possible options
                             are listed at https://jasmine.github.io/api/edge/Configuration.html for example,
                             you can disable the random execution with `random: false</p>
-                        <ion-img [src]="['assets/img/gims.jpg']"></ion-img>
+                        <ion-img [src]="['assets/img/gims2.jpg']"></ion-img>
                         <div class="infoToJob">
                             <h4>Date start: </h4>
                             <p>11/01/2023</p>
@@ -357,7 +183,7 @@
                             <p>Determiné</p>
                             <h4>Location: </h4>
                             <p>Yaoundé, Nkolbisson</p>
-                            <div class="d-f-c send" >
+                            <div class="d-f-c send">
                                 <ion-button color="color-red" shape="round" type="submit">
                                     Postuler
                                 </ion-button>
@@ -396,18 +222,6 @@
                     </div>
                 </ion-card>
             </div>
-            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-                <ion-fab-button (click)="addUser()">
-                    <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
-            </ion-fab>
-            <ion-list>
-                <ion-item *ngFor="let item of Users" (click)="openUsere(item)">
-                    <ion-label>
-                        {{item.username}}
-                    </ion-label>
-                </ion-item>
-            </ion-list>
         </div>
     </div>
 </ion-content>

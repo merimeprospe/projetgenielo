@@ -8,7 +8,7 @@ ion-toolbar{
 }
 
 .contener{
-    background: white;
+    background: var(--ion-color-primary-contrast);
     height: 100%;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
@@ -92,7 +92,7 @@ ion-input{
 }
 
 ion-back-button{
-    color:white;
+    color:var(--ion-color-primary-contrast);
 }
 
 .error{

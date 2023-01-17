@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { DisplayjobPage } from '../displayjob/displayjob.page';
 
 @Component({
   selector: 'app-joboffer',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobofferPage implements OnInit {
 
-  constructor() { }
+  constructor(private modal: ModalController) { }
 
-  openChat(){
-    
+  async openJob() {
+    const modal = await this.modal.create({
+      component: DisplayjobPage,
+    });
+
+    await modal.present();
+
   }
-  
+
+  openChat() {
+
+  }
+
   ngOnInit() {
   }
 

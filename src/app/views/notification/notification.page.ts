@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { DisplaynotifPage } from '../displaynotif/displaynotif.page';
 
 @Component({
   selector: 'app-notification',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationPage implements OnInit {
 
-  constructor() { }
+  constructor(private modal: ModalController) { }
 
-  openChat(){
-    
+  async openNotif() {
+    const modal = await this.modal.create({
+      component: DisplaynotifPage,
+    });
+
+    await modal.present();
+
   }
   
   ngOnInit() {

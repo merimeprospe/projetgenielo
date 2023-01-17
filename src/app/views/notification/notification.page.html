@@ -1,13 +1,13 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar class="ion-no-border">
     <ion-title class="">
-      Linkedin
+      EmployMe
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
         <ion-icon name="search"></ion-icon>
       </ion-button>
-      <ion-button  [routerLink]="['/listchat']">
+      <ion-button [routerLink]="['/listchat']">
         <ion-icon name="chatbubble-ellipses"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -27,54 +27,29 @@
           <ion-button><ion-icon name="ellipsis-horizontal"></ion-icon></ion-button>
         </ion-buttons>
       </div>
-
+      
       <ion-list>
-        <ion-item (click)="openChat()" routerLink="['/play']">
+        <ion-item (click)="openNotif()">
           <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
+            <img [src]="['assets/img/user.jpg']" />
           </ion-avatar>
           <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
+            <h3>MTN Cameroun</h3>
+            <p>Response of the postulation...</p>
           </ion-label>
         </ion-item>
-        <ion-item>
+        <ion-item (click)="openNotif()">
           <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
+            <img [src]="['assets/img/user.jpg']" />
           </ion-avatar>
           <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar>
-            <img [src]="['assets/img/blackM.jpg']" />
-          </ion-avatar>
-          <ion-label>
-            <h3>Black M</h3>
-            <p>Hello a is to fof ffkezf fzpeff efe ...</p>
+            <h3>Kevin Kamla</h3>
+            <p>Applied for the job offer...</p>
           </ion-label>
         </ion-item>
       </ion-list>
+
+
 
     </div>
   </div>

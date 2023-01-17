@@ -1,5 +1,5 @@
 ion-tab-bar{
-    height: 65px;
+    height: 80px;
     ion-tab-button {
         --ion-ripple:var(--ion-color-color-red)
         // --color:var(--ion-color-color-red);
@@ -9,7 +9,7 @@ ion-tab-bar{
     .newpost{
         --background: var(--ion-color-color-red);
         border-radius: 50%;
-        color: white;
+        color: var(--ion-color-primary-contrast);
     }
     ion-avatar{
         height: auto;

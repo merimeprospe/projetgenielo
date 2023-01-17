@@ -30,7 +30,7 @@
               <ion-label position="fixed">Post</ion-label>
               <ion-textarea (ionInput)="newpost($event)" type="text" name="postContent" placeholder="Enter your post"></ion-textarea>
               <label (click)="getImage()" class="label-img d-f-c" position="stacked">
-                <div *ngIf="!file">
+                <div *ngIf="!file" class="d-f-c">
                   <ion-icon slot="start" name="images"></ion-icon>|<ion-icon slot="start" name="videocam"></ion-icon>
                   Upload attachment
                 </div>

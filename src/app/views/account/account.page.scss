@@ -1,80 +1,220 @@
-ion-content{
-    --background:var(--ion-color-light-tint);
+:root {
+    --ion-color-item1: #fde5e5;
+    --ion-color-item2: #fabbbb;
+    --ion-color-item3: #ffa3a3;
+    --ion-color-item4: #ff9797;
+    --ion-color-item5: #ff6c6c;
+    --ion-color-item6: #fc6060;
+    --ion-color-item7: #ff5d5d;
+    --ion-color-item8: #f85858;
+    --ion-color-item9: #f83c3c;
+    --ion-color-item10: #740000;
 }
 
-.header{
-background:rgb(214, 62, 57);
-height: 180px;
-padding-top: 1px;
+ion-label p {
+    color: black;
 }
 
-.name{
+.d-f-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-f-e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.d-f-s-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ion-content {
+    --background: var(--ion-color-light-tint);
+}
+
+.item1 {
+    // --background: linear-gradient(to right, var(--ion-color-item2) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: white
+    
+}
+
+.item2 {
+    --background: #ffe3e3;
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+}
+
+.item3 {
+    --background: white
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+}
+
+.item4 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: #ffe3e3;
+
+}
+
+.item5 {
+    --background: white
+    // --background: linear-gradient(to right, var(--ion-color-item6) 2%, rgb(247 247 247 / 0%) 92%);
+}
+
+.item6 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    // --background: white
+    --background: #ffe3e3;
+
+}
+
+.item7 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: white;
+}
+
+.item8 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: #ffe3e3;
+}
+
+.item9 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: white;
+}
+
+.item10 {
+    // --background: linear-gradient(to right, var(--ion-color-item3) 2%, rgb(247 247 247 / 0%) 92%);
+    --background: #ffe3e3;
+}
+
+
+.button-star {
+    color: white;
+    margin-top: -17px;
+
+    ion-icon {
+        font-size: 19px;
+        margin: -10px;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+}
+
+.button-notes {
+    color: rgb(255, 196, 0);
+
+    ion-icon {
+        font-size: 30px;
+    }
+
+    .icon {
+        font-size: 27px;
+    }
+}
+
+.header {
+    background: var(--ion-color-color-red);
+    height: 180px;
+    padding-top: 1px;
+
+    ion-buttons {
+        width: 100%;
+    }
+}
+
+.name {
     color: white;
     font-weight: bold;
     text-align: center;
 }
 
-.space-beetween{
+.space-beetween {
     display: flex;
     justify-content: space-between;
     padding: 10px 10px 0px 10px;
 }
 
-.followings{
+.followings {
     display: flex;
     flex-direction: column;
     align-items: center;
-    p{
+
+    p {
         color: white;
         margin: 8px 0px 0px 0px;
     }
-    ion-badge{
+
+    ion-badge {
         margin-top: -1px;
     }
 }
 
-.img-box{
+.img-box {
     height: 130px;
     width: 130px;
     border-radius: 50%;
     overflow: hidden;
-    img{
+
+    img {
         height: 130px;
         width: 130px;
     }
 }
 
-.border-white{
-    border: 4px solid white;
-    border-radius: 50%;
-    width: fit-content;
+.border-white {
+    // border: 4px solid var(--ion-color-color-red);
+    // border-radius: 50%;
+    // width: fit-content;
 }
 
-.border-black{
-    border: 5px solid black;
-    border-radius: 50%;
-    width: fit-content;
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: rgb(255, 255, 255);
+
+    .progress {
+        background: rgb(2, 130, 189);
+        height: 100%;
+        border-radius: 0 10px 10px 0;
+    }
+
 }
 
-.flexe{
-    display:flex;
+.bloc-experience{
+    padding: 8px;
+    --background: white;
+
+    h3{
+        color: black;
+        font-weight: 600;
+    }
+}
+
+.flexe {
+    display: flex;
     justify-content: center;
     margin-top: -76px;
 }
 
-.domain{
+.domain {
     display: flex;
     justify-content: space-between;
 }
 
-.edit-bouton{
-    position: relative;
-    top: 18px;
-    left: 190px;
-}
+// .edit-bouton {
+//     position: relative;
+//     top: 18px;
+//     left: 190px;
+// }
 
-.chat-bouton{
-    position: relative;
-    top: 18px;
-    left: 40px;
-}
+// .chat-bouton {
+//     position: relative;
+//     top: 6px;
+//     left: 44px;
+// }

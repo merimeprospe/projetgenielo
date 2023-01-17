@@ -30,6 +30,18 @@ const routes: Routes = [
     path: 'listjoboffer',
     loadChildren: () => import('./views/listjoboffer/listjoboffer.module').then( m => m.ListjobofferPageModule)
   },
+  {
+    path: 'displaynotif',
+    loadChildren: () => import('./views/displaynotif/displaynotif.module').then( m => m.DisplaynotifPageModule)
+  },
+  {
+    path: 'displayjob',
+    loadChildren: () => import('./views/displayjob/displayjob.module').then( m => m.DisplayjobPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./views/search/search.module').then( m => m.SearchPageModule)
+  },
 
 
 
